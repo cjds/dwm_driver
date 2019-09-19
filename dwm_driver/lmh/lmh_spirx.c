@@ -25,6 +25,7 @@
 #include "hal_log.h"
 #include "hal_spi.h"
 #include "lmh.h"
+#include "lmh_spirx.h"
 
 #define LMH_SPIRX_HEADER_LENGTH           1
 #define LMH_SPIRX_SIZE_OFFSET             0
