@@ -23,6 +23,7 @@
 #include "hal_spi.h"
 #include "hal_log.h"
 #include "lmh.h"
+#include "lmh_spirx.h"
 #include "lmh_spirx_drdy.h"
 
 #define LMH_SPIRX_DRDY_HEADER_LENGTH           1
@@ -34,7 +35,8 @@
 #define LMH_SPIRX_DRDY_TIMEOUT_DEFAULT       1000
 
 static int  LMH_SPIRX_DRDY_IntCfg(uint16_t value);
-static void LMH_SPIRX_DRDY_DrdyCb(void);
+//static void LMH_SPIRX_DRDY_DrdyCb(void);
+//
 
 static bool lmh_spirx_drdy_initialized[2] = {false, false};
 static int  lmh_spirx_drdy_timeout = LMH_SPIRX_DRDY_TIMEOUT_DEFAULT;
@@ -123,24 +125,13 @@ void LMH_SPIRX_DRDY_SetToIdle(void)
 }
 
 /**
- * @brief : on drdy pin going high/low, set/reset the lmh_spirx_drdy_drdy_flag 
- *
- * @return none
- */
-static void LMH_SPIRX_DRDY_DrdyCb(void)
-{
-   LMH_SPIRX_DRDY_PinCheck();
-   HAL_Log("lmh:     SPI_DRDY: DRDY pin rising edge detected.  %s \n", LMH_SPIRX_DRDY_PinGet() ? "+++" : "---"); 
-}
-
-/**
  * @brief : update lmh_spirx_drdy_drdy_flag status according to HAL_GPIO_DRDY status
  *
  * @return none
  */
 void LMH_SPIRX_DRDY_PinCheck(void)
 {   
-   return false;
+   return;
 }
 
 /**
